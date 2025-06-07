@@ -11,7 +11,7 @@ public class ProductService {
     @Autowired
     private RestTemplateConfig restTemplate;
 
-    private final String PRODUCT_MICROSERVICE_URL="http://localhost:8093/inventario/inventarios";
+    private final String PRODUCT_MICROSERVICE_URL="http://localhost:8093/producto/todos";
 
     public DTOProduct[] getAllProducts() {
         return restTemplate.restTemplate().getForObject(PRODUCT_MICROSERVICE_URL, DTOProduct[].class);
