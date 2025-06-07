@@ -41,6 +41,7 @@ public class PerfumeController {
     @PostMapping
     public ResponseEntity<Perfume> agregarPerfume(@Valid @RequestBody Perfume perfume) {
         try {
+
             Perfume nuevoPerfume = perfumeService.agregarPerfume(perfume);
             return ResponseEntity.status(HttpStatus.CREATED).body(nuevoPerfume);
         } catch (Exception e) {
