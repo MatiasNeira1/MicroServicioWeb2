@@ -11,6 +11,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 public class UsuarioAuth {
 
@@ -29,9 +32,6 @@ public class UsuarioAuth {
 
     }
 
-    
-
-
     public UserLoginRequest iniciar(String email, String password) {
         UserLoginRequest usuario = usuarioRepository.findByEmail(email);
         if (usuario != null && passwordEncoder.matches(password, usuario.getContraseña())) {
@@ -40,5 +40,11 @@ public class UsuarioAuth {
             return null;
         }
     }
+    public List<UserLoginRequest> obtenerTodosUsuarios() {
+        return usuarioRepository.findAll();
+    }
 
+    public Optional <UserLoginRequest> obtenerUsuarioPorId(Long id) {
+        return usuarioRepository.findById(id);
+    }
 }

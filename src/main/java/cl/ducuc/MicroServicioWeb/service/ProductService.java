@@ -1,20 +1,24 @@
 package cl.ducuc.MicroServicioWeb.service;
 
-import cl.ducuc.MicroServicioWeb.config.RestTemplateConfig;
+import cl.ducuc.MicroServicioWeb.config.WebClientConfig;
 import cl.ducuc.MicroServicioWeb.model.DTOProduct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.client.WebClient;
 
 @Service
 public class ProductService {
-
     @Autowired
-    private RestTemplateConfig restTemplate;
-
-    private final String PRODUCT_MICROSERVICE_URL="http://localhost:8093/producto/todos";
+    private WebClient webClient;
 
     public DTOProduct[] getAllProducts() {
-        return restTemplate.restTemplate().getForObject(PRODUCT_MICROSERVICE_URL, DTOProduct[].class);
+        return webClient
+                .get()
+                .uri("/inventario/inventarios")
+                .retrieve()
+                .bodyToMono(DTOProduct[].class)
+                .block();
     }
+
     }
 
