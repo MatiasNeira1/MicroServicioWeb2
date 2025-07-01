@@ -14,11 +14,20 @@ public class ProductService {
     public DTOProduct[] getAllProducts() {
         return webClient
                 .get()
-                .uri("/inventario/inventarios")
+                .uri("/producto/todos")
                 .retrieve()
                 .bodyToMono(DTOProduct[].class)
                 .block();
     }
 
+    public DTOProduct getProductById(Long id) {
+        return webClient
+                .get()
+                .uri("/producto/{id}", id)
+                .retrieve()
+                .bodyToMono(DTOProduct.class)
+                .block();
     }
+
+}
 

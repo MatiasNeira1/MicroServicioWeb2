@@ -1,8 +1,13 @@
 package cl.ducuc.MicroServicioWeb.model;
 
-import lombok.Data;
+import lombok.*;
 
 @Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+
 public class DTOProduct {
     private long id;
     private String nombre;

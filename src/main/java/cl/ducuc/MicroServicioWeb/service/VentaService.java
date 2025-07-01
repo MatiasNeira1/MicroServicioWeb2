@@ -11,8 +11,7 @@ public class VentaService {
     @Autowired
     private VentaRepository ventaRepository;
 
-    public VentaModel crearVenta(VentaModel venta, Long idUsuario, Long idProducto) {
+    public VentaModel crearVenta(VentaModel venta) {
         return ventaRepository.save(venta);
     }
-
 }
