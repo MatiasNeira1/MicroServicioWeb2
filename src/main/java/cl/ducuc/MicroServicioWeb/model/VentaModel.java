@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "venta")
 public class VentaModel {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idventa;
@@ -21,4 +20,9 @@ public class VentaModel {
     private int cantidadProducto;
     private Long idusuario;
     private Long id_prod;
+
+    // Relación Many-to-One con UserLoginRequest
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "idusuario", insertable = false, updatable = false)
+    private UserLoginRequest usuario;
 }
