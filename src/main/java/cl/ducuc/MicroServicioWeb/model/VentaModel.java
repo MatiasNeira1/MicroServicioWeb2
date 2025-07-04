@@ -14,12 +14,12 @@ public class VentaModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idventa;
-
+    private Long idusuario;
+    private Long id_prod;
     private String nombreProducto;
     private int precioProducto;
     private int cantidadProducto;
-    private Long idusuario;
-    private Long id_prod;
+
 
     // Relación Many-to-One con UserLoginRequest
     @ManyToOne(fetch = FetchType.LAZY)
