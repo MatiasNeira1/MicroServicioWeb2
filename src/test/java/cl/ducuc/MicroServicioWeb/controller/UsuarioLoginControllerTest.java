@@ -44,8 +44,8 @@ public class UsuarioLoginControllerTest {
     @Test
     void testObtenerTodosUsuarios() {
         List<UserLoginRequest> usuariosMock = Arrays.asList(
-                new UserLoginRequest(1l, "user1@test.com", "pass1", "Nombre1", "Apellido1"),
-                new UserLoginRequest(2l, "user2@test.com", "pass2", "Nombre2", "Apellido2")
+                new UserLoginRequest(1l, "pedro", "torres", "user1@test.com", "1234512as"),
+                new UserLoginRequest(2l, "juan", "torres2", "user1@test.com", "131dwasasd")
         );
 
         when(usuarioService.obtenerTodosUsuarios()).thenReturn(usuariosMock);

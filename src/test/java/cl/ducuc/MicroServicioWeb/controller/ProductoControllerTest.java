@@ -22,8 +22,8 @@ public class ProductoControllerTest {
     @Test
     void testGetProductos() {
         DTOProduct[] productosMock = new DTOProduct[]{
-                new DTOProduct(1L, "Producto 1", "Descripción 1", 10, 1000),
-                new DTOProduct(2L, "Producto 2", "Descripción 2", 5, 2000)
+                new DTOProduct(1L, "Perfume 1", "este es el perfume 1", 10, 1000),
+                new DTOProduct(2L, "Perfume 2", "este es el perfume 2", 5, 2000)
         };
         when(productService.getAllProducts()).thenReturn(productosMock);
 

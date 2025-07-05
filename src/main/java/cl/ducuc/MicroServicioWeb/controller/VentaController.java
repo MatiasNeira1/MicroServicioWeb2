@@ -28,14 +28,14 @@ public class VentaController {
         }
     }
 
-    // Obtener todas las ventas
+
     @GetMapping
     public ResponseEntity<List<VentaModel>> obtenerTodasLasVentas() {
         List<VentaModel> ventas = ventaService.obtenerTodasLasVentas();
         return ResponseEntity.ok(ventas);
     }
 
-    // Obtener ventas por cliente
+
     @GetMapping("/cliente/{idCliente}")
     public ResponseEntity<?> obtenerVentasPorCliente(@PathVariable Long idCliente) {
         try {
@@ -46,7 +46,7 @@ public class VentaController {
         }
     }
 
-    // Obtener una venta específica por ID
+    
     @GetMapping("/{idVenta}")
     public ResponseEntity<?> obtenerVentaPorId(@PathVariable Long idVenta) {
         Optional<VentaModel> venta = ventaService.obtenerVentaPorId(idVenta);
