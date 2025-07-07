@@ -17,3 +17,5 @@ http://localhost:8094/ENDPOINT QUE SE DESEA TESTEAR
 
 Para generar una venta se debera ejecutar al mismo tiempo el microservicio sucursal, ya que se obtiene informacion desde ahi
 
+PARA EJECUTAR EL PROGRAMA DEBE ESTAR EN ramaproducto
+
