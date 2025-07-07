@@ -21,8 +21,8 @@ public class VentaModel {
     private int cantidadProducto;
 
 
-    // Relación Many-to-One con UserLoginRequest
-    @ManyToOne(fetch = FetchType.LAZY)
+
+    @ManyToOne
     @JoinColumn(name = "idusuario", insertable = false, updatable = false)
     private UserLoginRequest usuario;
 }

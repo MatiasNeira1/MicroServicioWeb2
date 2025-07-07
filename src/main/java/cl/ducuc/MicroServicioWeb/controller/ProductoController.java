@@ -11,6 +11,7 @@ public class ProductoController {
 
     @Autowired
     private ProductService productService;
+
     @GetMapping("/todos")
     public DTOProduct[] getProductos() {
         return productService.getAllProducts();
